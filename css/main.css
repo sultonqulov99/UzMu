@@ -1,0 +1,232 @@
+@import url(../css/fonts.css);
+
+:root {
+    --primary-color: #7177F1;
+    --body: #fff;
+    --text-color:  #323232;
+    --dots: #828282;
+    --dots-active: #7177F1;
+    --tab-text: #fff;
+    --footer-link: #7177F1;
+    --monserant: "Montserrat";
+    --trebuchet: "Trebuchet";
+    --white: #fff;
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: #151437;
+    font-family: var(--monserant);
+    color: var(--text-color);
+}
+
+.all-btn {
+    max-width: 190px;
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 12px 0;
+    display: inline-block;
+    box-shadow: 0px 0px 5px 1px rgba(113, 119, 241, 0.5);
+    border-radius: 8px;
+    text-align: center;
+ 
+    transition: .5s;
+}
+.all-btn:hover {
+    color: var(--primary-color);
+    background: #790FF1;
+}
+
+.title {
+    font-size: calc(28px + 12 * (100vw / 1920));
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+}
+
+/* header start */
+
+.logo::before {
+    content: url(../img/MYWORK\ dark.svg);
+}
+
+@keyframes rotate {
+    0% {
+        transform: translateY(100%) scale(1.3);
+    }
+    100% {
+        transform: translateY(0%) scale(0);
+    }
+}
+
+
+@keyframes circle {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.header__nav-link {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    line-height: 16px;
+}
+.header__nav-link:hover {
+    color: var(--primary-color);
+}
+
+.header__menu {
+    width: 40px;
+    height: 2px;
+    background: var(--white);
+    padding: 0;
+    position: relative;
+    border: unset;
+    transition: .5s;
+}
+.header__menu:focus {
+    box-shadow: unset;
+}
+.header__menu::before,
+.header__menu::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--white);
+    transition: .5s;
+}
+.header__menu::before {
+    top: -10px;
+}
+.header__menu::after {
+    top: 10px;
+}
+.header__menu:not(.collapsed)::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+.header__menu:not(.collapsed)::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+.header__menu:not(.collapsed) {
+    background: transparent;
+}
+
+.header__carousel-image {
+    max-width: 550px;
+    min-height: 500px;
+    margin: auto;
+}
+.header__content {
+    padding-top: 40px;
+}
+.header__content-subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+.header__content-title {
+    margin-bottom: 25px;
+}
+.header__content-btn {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin: 0 auto 50px;
+}
+.header__tech-card {
+    color: #fff;
+    display: grid;
+    place-items: center;
+    row-gap: 15px;
+}
+.header__tech-name {
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+.header__tech-card:nth-of-type(1) .header__tech-brand {
+    color: #E44F26;
+}
+.header__tech-card:nth-of-type(2) .header__tech-brand {
+    color: #1572B6;
+}
+
+.header__tech-card:nth-of-type(3) .header__tech-brand {
+    color: #790FF1;
+}
+.header__carousel-indicators {
+    margin: 50px 0 0;
+    column-gap: 30px;
+
+}
+.header__carousel-dot {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+    background-color: var(--dots);
+    display: block;
+}
+.header__carousel-dot.active {
+    background-color: var(--dots-active);
+}
+.header__tech {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar__container {
+    position: relative;
+}
+.navbar__container::before{
+    content: '';
+    width: 59px;
+    height: 60px;
+    position: absolute;
+    border: 5px solid #790FF1;
+    border-radius: 50%;
+    top: 18%;
+    left: -5%;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: rotate 3s linear infinite alternate;
+}
+
+.navbar__container::after{
+    content: '';
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    right: -5%;
+    top: 100%;
+    border: 5px solid #9297EF;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+    animation: circle 3s linear infinite alternate;
+   
+}
+
+
+/* header end */

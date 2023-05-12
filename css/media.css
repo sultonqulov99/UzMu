@@ -1,0 +1,15 @@
+@media (prefers-color-schema: dark) {
+    :root {
+        --body: #151437;
+        --text-color: #fff;
+        --dots: #EBEBEB;
+        --tab-text: #151437;
+        --footer-link: #fff;
+    }
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: calc(28px + (12 + 12 * 0.7) * ((100vw - 320px) / 1920));
+    }
+}
